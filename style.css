@@ -1,0 +1,616 @@
+  body {
+    font-family: "Arial", sans-serif;
+    background: repeating-linear-gradient(
+      45deg,
+      #f5f5f5 0,
+      #f5f5f5 10px,
+      #e0e0e0 10px,
+      #e0e0e0 20px
+    );
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Header top icon bar */
+  .top-icons {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    border-bottom: 1px solid #ddd;
+    padding: 6px 8px;
+    flex-wrap: nowrap;
+  }
+  .top-icons > div {
+    background: white;
+    border: 1px solid transparent;
+    padding: 4px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: background 0.3s ease;
+  }
+  .top-icons > div:hover, .top-icons > div.active {
+    border-bottom: 4px solid #f7d840;
+    background-color: #fffcea;
+  }
+  .top-icons svg {
+    width: 26px;
+    height: 26px;
+  }
+  .top-icons span {
+    font-weight: 700;
+    font-size: 13px;
+    user-select: none;
+  }
+
+  /* Navigation below logo bar */
+  nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    border-bottom: 4px solid #0073e6;
+  }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    max-width: 1000px;
+    width: 100%;
+  }
+  nav li {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 0;
+    border-bottom: 4px solid transparent;
+    font-size: 14px;
+    user-select: none;
+  }
+  nav li.active,
+  nav li:hover {
+    background: #f5f5f5;
+    border-bottom: 4px solid #0073e6;
+  }
+  nav li > svg {
+    display: block;
+    margin: 0 auto 6px auto;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Left fixed buttons (Log In and Search) */
+  .fixed-left-buttons {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transform: translateY(-50%);
+    z-index: 40;
+  }
+  .fixed-left-buttons button {
+    background-color: #57bb8a;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
+    user-select: none;
+    transition: background-color 0.3s;
+  }
+  .fixed-left-buttons button.search-btn {
+    background-color: #d0d0d0;
+    color: #444;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .fixed-left-buttons button:hover {
+    filter: brightness(0.9);
+  }
+
+  /* Main container */
+  main {
+    max-width: 1100px;
+    margin: 20px auto 80px auto;
+    background: white;
+    padding: 0 12px 40px 12px;
+    box-sizing: border-box;
+  }
+
+  /* Top big card with image and text */
+  .top-feature {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .top-feature .image-card {
+    flex: 2 1 360px;
+    max-width: 600px;
+  }
+  .top-feature .image-card img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+    aspect-ratio: 4 / 3;
+  }
+  .top-feature .text-panel {
+    flex: 1 1 300px;
+    background-color: #af94f2;
+    border-radius: 8px;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .top-feature .text-panel h2 {
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+  }
+  .top-feature .text-panel em {
+    font-weight: 700;
+    font-style: normal;
+    opacity: 0.8;
+  }
+  .top-feature .text-panel p {
+    opacity: 0.7;
+    font-size: 14px;
+    margin: 8px 0 0;
+  }
+
+  /* Smaller cards grid (6 cards) */
+  .small-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .small-card {
+    border-radius: 6px;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+  .small-card img {
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+    object-fit: cover;
+    height: 90px;
+  }
+  .small-card-text {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.2;
+    padding: 0 6px 6px 6px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 0 0 6px 6px;
+    flex-grow: 1;
+  }
+
+  .small-card-gray {
+    background-color: #a8a8a8;
+  }
+  .small-card-pink {
+    background-color: #ff90b3;
+  }
+  .small-card-blue {
+    background-color: #0f5bc5;
+  }
+  .small-card-orange {
+    background-color: #ec6905;
+  }
+  .small-card-green {
+    background-color: #3ea841;
+  }
+  .small-card-yellow {
+    background-color: #e1c87d;
+  }
+
+  /* Featured Pokémon Horizontal Scroll */
+  .featured-pokemon-container {
+    margin-bottom: 30px;
+  }
+  .featured-pokemon-header {
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .featured-pokemon-header span {
+    background: #272727;
+    color: white;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 6px 6px 0 0;
+    user-select: none;
+  }
+  .pokemon-scroll {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background: #292929;
+    padding: 12px 0 18px 0;
+    border-radius: 0 0 8px 8px;
+  }
+  .pokemon-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .pokemon-card {
+    flex: 0 0 110px;
+    margin: 0 6px;
+    background: #3a3a3a;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+    user-select: none;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .pokemon-card:hover {
+    background: #1c1c1c;
+  }
+  .pokemon-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 6px;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.5));
+  }
+  .pokemon-name {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .pokemon-number {
+    font-size: 11px;
+    color: #a0a0a0;
+  }
+
+  /* Tooltip overlay on hover for Pokémon */
+  .pokemon-card:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+  .tooltip {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #222;
+    border-radius: 6px;
+    padding: 12px 14px;
+    width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    color: white;
+    font-size: 12px;
+    user-select: none;
+    z-index: 10;
+    text-align: left;
+  }
+  .tooltip .type {
+    background-color: #35a02e;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 11px;
+  }
+  .tooltip strong {
+    display: block;
+    margin-top: 6px;
+  }
+  /* Explore more button */
+  .explore-more-btn {
+    display: inline-block;
+    background-color: #292929;
+    padding: 8px 16px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    margin: 12px auto 0 auto;
+    display: block;
+    max-width: 200px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  .explore-more-btn:hover {
+    background-color: #444;
+  }
+
+  /* What's New Section grid */
+  .news-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .news-card {
+    border-radius: 10px;
+    padding: 12px 12px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .news-card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .news-card.orange-btn {
+    background-color: #ec6905;
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 6px;
+    max-width: 140px;
+    margin-left: auto;
+  }
+  .news-card h3 {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 6px 0;
+  }
+  .news-card p {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  .news-yellow {
+    background-color: #e1c87d;
+    color: #2a2a2a;
+  }
+  .news-pink {
+    background-color: #d664a5;
+  }
+  .news-purple {
+    background-color: #6c5cc5;
+  }
+  .news-blue {
+    background-color: #1e81cc;
+  }
+  .news-green {
+    background-color: #388e3c;
+  }
+  .news-orange {
+    background-color: #ec6905;
+  }
+
+  /* Form section styling */
+  footer {
+    background-color: #222222;
+    color: white;
+    padding: 36px 16px 36px 16px;
+    font-size: 14px;
+  }
+  .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+  }
+  .email-signup {
+    flex: 1 1 380px;
+    min-width: 280px;
+  }
+  .email-signup h3 {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .email-inputs {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .email-inputs input,
+  .email-inputs select {
+    border-radius: 6px;
+    border: none;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline-offset: 2px;
+    outline-color: #f7d840;
+    flex: 1 1 150px;
+  }
+  .email-inputs select {
+    max-width: 120px;
+  }
+  .checkboxes {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin-bottom: 14px;
+  }
+  .checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .checkboxes label a {
+    text-decoration: underline;
+    color: #f7d840;
+  }
+  .checkboxes input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #f7d840;
+  }
+  .signup-btn {
+    background-color: #777777;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+  }
+  .signup-btn:hover {
+    background-color: #f7d840;
+    color: #222222;
+  }
+
+  /* Footer bottom links and social */
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    flex: 1 1 600px;
+    min-width: 280px;
+    border-top: 1px solid #444;
+    padding-top: 24px;
+  }
+  .footer-col {
+    flex: 1 1 140px;
+    font-size: 13px;
+  }
+  .footer-col ul {
+    padding: 0;
+    margin: 6px 0 0 0;
+    list-style: none;
+  }
+  .footer-col ul li {
+    margin: 6px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .footer-col ul li:hover {
+    text-decoration: underline;
+  }
+  .footer-col h4 {
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .footer-socials {
+    flex: 1 1 140px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .footer-socials a {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background-color: #444;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 28px;
+    transition: background-color 0.3s;
+  }
+  .footer-socials a:hover {
+    background-color: #f7d840;
+    color: #222;
+  }
+  /* Small legal and citations below footer-left on mobile */
+  .footer-legal {
+    font-size: 10px;
+    color: #999;
+    margin: 14px 0 0 0;
+    max-width: 280px;
+  }
+  .footer-legal a {
+    color: #f7d840;
+    text-decoration: underline;
+  }
+
+  /* Recaptcha badge position bottom right */
+  .grecaptcha-badge {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    main {
+      margin: 12px auto 60px auto;
+      padding: 0 8px 36px 8px;
+    }
+    .top-feature {
+      flex-direction: column;
+      align-items: center;
+    }
+    .top-feature .text-panel {
+      width: 100%;
+      max-width: 600px;
+    }
+    nav ul {
+      flex-wrap: wrap;
+    }
+    nav li {
+      flex: 0 0 33.3333%;
+      font-size: 13px;
+      padding: 8px 0;
+    }
+    .fixed-left-buttons {
+      display: none;
+    }
+    .small-cards {
+      grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
+    }
+    .featured-pokemon-container {
+      margin-bottom: 24px;
+    }
+    .pokemon-scroll {
+      padding: 8px 0 14px 0;
+    }
+    .news-section {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    footer {
+      font-size: 13px;
+    }
+    .footer-container {
+      flex-direction: column;
+      gap: 24px;
+    }
+    .footer-links {
+      flex-direction: column;
+      border-top: none;
+      padding-top: 0;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .footer-col {
+      min-width: 100%;
+    }
+  }

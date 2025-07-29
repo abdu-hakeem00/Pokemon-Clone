@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pokémon TCG Clone</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Top Icon Bar -->
+<div class="top-icons" aria-label="Top navigation icons">
+  <div class="active" role="button" tabindex="0" aria-current="page" aria-label="Pokémon Logo">
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7001c1d2-0e54-411f-901f-acd6b715c084.png" alt="Pokémon brand logo in bright colors" />
+  </div>
+  <div role="button" tabindex="0" aria-label="Shop link">
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4a03bfe3-5d12-42da-8e97-3b22b6a88833.png" alt="Shopping bag with Pikachu ears, representing shop icon" />
+  </div>
+  <div role="button" tabindex="0" aria-label="About Us link">
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/17f36c18-6e02-41f8-8041-15addd53615f.png" alt="Yellow stylized text about us icon with Pikachu ears" />
+  </div>
+  <div role="button" tabindex="0" aria-label="Pokémon TCG link">
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0526ece7-07df-47e2-8ad4-f32e015896ae.png" alt="Pokémon TCG (Trading Card Game) logo banner in colorful style" />
+  </div>
+  <div role="button" tabindex="0" aria-label="Pokémon Legends link">
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/147d3236-48a0-4415-b4ee-bc12a580ffd8.png" alt="Pokémon Legends game logo with green and grey color schemes" />
+  </div>
+  <div role="button" tabindex="0" aria-label="Pokémon Forums link">
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/535b1ed7-7163-4b9e-acbb-ad9ff2107011.png" alt="Pokémon Forums speech bubble blue icon with Pokéball emblem" />
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav aria-label="Primary site navigation">
+  <ul>
+    <li class="active" tabindex="0" aria-current="page" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 9l9-7 9 7"></path>
+        <path d="M9 22V12h6v10"></path>
+      </svg>
+      Home
+    </li>
+    <li tabindex="0" aria-label="Pokédex">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle>
+      </svg>
+      Pokédex
+    </li>
+    <li tabindex="0" aria-label="Video Games & Apps">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><line x1="12" y1="7" x2="12" y2="21"></line><line x1="7" y1="11" x2="7.01" y2="11"></line><line x1="17" y1="11" x2="17.01" y2="11"></line>
+      </svg>
+      Video Games & Apps
+    </li>
+    <li tabindex="0" aria-label="Trading Card Game">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="7" y1="21" x2="17" y2="21"></line>
+      </svg>
+      Trading Card Game
+    </li>
+    <li tabindex="0" aria-label="Animation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+      Animation
+    </li>
+    <li tabindex="0" aria-label="Play Pokémon Events">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="6" x2="12" y2="12"></line><line x1="12" y1="12" x2="16" y2="14"></line>
+      </svg>
+      Play! Pokémon Events
+    </li>
+    <li tabindex="0" aria-label="News">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 10h-6"></path><path d="M21 6h-10"></path><path d="M7 6H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h4z"></path>
+      </svg>
+      News
+    </li>
+  </ul>
+</nav>
+
+<!-- Fixed left buttons -->
+<div class="fixed-left-buttons" aria-label="Quick action buttons">
+  <button type="button" aria-label="Log In button">Log In</button>
+  <button class="search-btn" type="button" aria-label="Search button" title="Open search">🔍</button>
+</div>
+
+<main role="main" aria-label="Main content area">
+
+  <!-- Top feature -->
+  <section class="top-feature" aria-label="Top feature content showcasing Pokémon cards and headline">
+    <div class="image-card">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f2a9db6b-e3e1-4a34-a2b5-6a0841e5e917.png" alt="Image showing black and white Pokémon trading cards near a person" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a8e450fd-f85e-483c-a013-a475646cce2b.png';" />
+    </div>
+    <div class="text-panel">
+      <h2>Top Cards for the Competition in Pokémon TCG <em>Scarlet & Violet</em>—Black Bolt and White Flare</h2>
+      <p>Xander Pero highlights cards from the latest expansions that are ready to charge into your next Pokémon TCG battle.</p>
+    </div>
+  </section>
+
+  <!-- Small cards grid -->
+  <section class="small-cards" aria-label="Additional news and event highlights">
+    <article class="small-card small-card-gray" tabindex="0" aria-label="Pokémon Presents Recap">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/884c105f-3170-41a6-9bb4-a9af5aac4ff1.png" alt="Colorful image representing Pokémon Presents recap with Pokémon characters on screen" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/213db506-746d-4bd8-8238-462c44f84510.png';" />
+      <div class="small-card-text">Pokémon Presents Recap</div>
+    </article>
+    <article class="small-card small-card-pink" tabindex="0" aria-label="Dynamite Pokémon GO Max Battle Weekend">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8bd12693-9c54-4b3f-947e-a83108bc18c1.png" alt="Scenic sunny landscape image with Pokémon GO dynamite max battle weekend event" onerror="this.onerror=null;this.src='https://placehold.co/280x90?text=Image+not+available';" />
+      <div class="small-card-text">Dynamite Pokémon GO Max Battle Weekend</div>
+    </article>
+    <article class="small-card small-card-orange" tabindex="0" aria-label="A Storm Comes with Pokémon TCG Pocket's Upcoming Expansion">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/21a70965-7a09-4548-94ad-7d114a135fa0.png" alt="Fiery and icy Pokémon battling in an intense storm representing upcoming expansion artwork" onerror="this.onerror=null;this.src='https://placehold.co/280x90?text=Image+not+available';" />
+      <div class="small-card-text">A Storm Comes with Pokémon TCG Pocket’s Upcoming Expansion</div>
+    </article>
+    <article class="small-card small-card-yellow" tabindex="0" aria-label="Revisit Paldea, Kitakami, and Blueberry Academy on Nintendo Switch 2">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c0122f48-1413-480d-933d-c4dcf2cd49cb.png" alt="Open Nintendo Switch game scene of Paldea, Kitakami and Blueberry Academy with a rural setting" onerror="this.onerror=null;this.src='https://placehold.co/280x90?text=Image+not+available';" />
+      <div class="small-card-text">Revisit Paldea, Kitakami, and Blueberry Academy on Nintendo Switch 2</div>
+    </article>
+    <article class="small-card small-card-blue" tabindex="0" aria-label="Mega Booth & Mega Fun at Comic-Con International">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0e324544-f3dd-41ab-8863-f43aabc34116.png" alt="Mega Booth and Mega Fun event signage with Pokémon characters and attendees at Comic-Con" onerror="this.onerror=null;this.src='https://placehold.co/280x90?text=Image+not+available';" />
+      <div class="small-card-text">Mega Booth & Mega Fun at Comic-Con International</div>
+    </article>
+  </section>
+
+  <!-- Featured Pokémon horizontal scroll -->
+  <section class="featured-pokemon-container" aria-label="Featured Pokémon carousel with details on hover">
+    <div class="featured-pokemon-header" aria-live="polite">
+      <span>Featured Pokémon</span>
+    </div>
+    <div class="pokemon-scroll" role="list" aria-label="Featured Pokémon">
+      <article role="listitem" tabindex="0" class="pokemon-card" aria-describedby="tooltip-darkrai" aria-label="Darkrai Pokémon, number 491">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/92208cff-60c9-48cf-8458-f2d7451b26cc.png" alt="Image of Pokémon Darkrai with a dark, shadowy body and piercing eyes" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f8dfd339-a4b7-42ec-8c7f-5d17664a98fe.png';" />
+        <div class="pokemon-number">491</div>
+        <div class="pokemon-name">Darkrai</div>
+        <div class="tooltip" id="tooltip-darkrai" role="tooltip" aria-hidden="true">Type: Dark<br>Abilities: Bad Dreams</div>
+      </article>
+      <article role="listitem" tabindex="0" class="pokemon-card" aria-describedby="tooltip-froslass" aria-label="Froslass Pokémon, number 478">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e6fe37ac-b14c-4a37-a88b-62fdab5d1824.png" alt="Image of Pokémon Froslass, the ice and ghost-type Pokémon with a ghostly white and blue body" onerror="this.onerror=null;this.src='https://placehold.co/80x80?text=Image+not+available';" />
+        <div class="pokemon-number">478</div>
+        <div class="pokemon-name">Froslass</div>
+        <div class="tooltip" id="tooltip-froslass" role="tooltip" aria-hidden="true">Type: Ice/Ghost<br>Abilities: Snow Cloak</div>
+      </article>
+      <article role="listitem" tabindex="0" class="pokemon-card" aria-describedby="tooltip-rellor" aria-label="Rellor Pokémon, number 953">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3de57259-849d-4453-903b-c5be1fe60129.png" alt="Image of Pokémon Rellor, a bug type Pokémon with round brown body and legs" onerror="this.onerror=null;this.src='https://placehold.co/80x80?text=Image+not+available';" />
+        <div class="pokemon-number">953</div>
+        <div class="pokemon-name">Rellor</div>
+        <div class="tooltip" id="tooltip-rellor" role="tooltip" aria-hidden="true">
+          <strong>Type:</strong> <span class="type">Bug</span><br />
+          <strong>Abilities:</strong> Compound Eyes
+        </div>
+      </article>
+      <article role="listitem" tabindex="0" class="pokemon-card" aria-describedby="tooltip-karrablast" aria-label="Karrablast Pokémon, number 588">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6a7c3406-07a0-4060-a5b8-4d8013241814.png" alt="Image of Pokémon Karrablast, a blue bug-like Pokémon with yellow markings" onerror="this.onerror=null;this.src='https://placehold.co/80x80?text=Image+not+available';" />
+        <div class="pokemon-number">588</div>
+        <div class="pokemon-name">Karrablast</div>
+        <div class="tooltip" id="tooltip-karrablast" role="tooltip" aria-hidden="true">Type: Bug<br>Abilities: No Guard</div>
+      </article>
+      <article role="listitem" tabindex="0" class="pokemon-card" aria-describedby="tooltip-celebi" aria-label="Celebi Pokémon, number 251">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/12059392-9229-43ad-bc58-14ec89b2fc11.png" alt="Image of Celebi Pokémon, a small green fairy-like creature with big blue eyes and antenna" onerror="this.onerror=null;this.src='https://placehold.co/80x80?text=Image+not+available';" />
+        <div class="pokemon-number">251</div>
+        <div class="pokemon-name">Celebi</div>
+        <div class="tooltip" id="tooltip-celebi" role="tooltip" aria-hidden="true">Type: Psychic/Grass<br>Abilities: Natural Cure</div>
+      </article>
+    </div>
+    <button class="explore-more-btn" aria-label="Explore more Pokémon">Explore More Pokémon</button>
+  </section>
+
+  <!-- News Section -->
+  <section aria-label="News and Events" class="news-section">
+    <article class="news-card news-yellow" tabindex="0" aria-label="Puzzle Up with Pokémon Friends event">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4fc0afde-77b6-442b-a9ff-d5f63e52a671.png" alt="Colorful Pokémon Friends game characters and logo in a joyful puzzle scene" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/17f52421-f1b5-466f-ae4a-5964666e8a95.png';" />
+      <h3>Puzzle Up with Pokémon Friends</h3>
+      <p>Solve puzzles and create a colorful world of Pokémon plush with a game that makes thinking fun.</p>
+    </article>
+    <article class="news-card news-blue" tabindex="0" aria-label="Get the latest updates for Pokémon Legends: Z-A">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2e336faa-aa43-494f-ba1a-ca77cd564814.png" alt="Exciting action scene from Pokémon Legends Z-A with characters in dynamic adventure" onerror="this.onerror=null;this.src='https://placehold.co/400x120?text=Image+not+available';" />
+      <h3>Get the Latest Updates for <em>Pokémon Legends: Z-A</em></h3>
+      <p>Learn about Rogue Mega Evolution, a newly discovered Mega-Evolved Pokémon, and more in this upcoming Lumiose City adventure.</p>
+    </article>
+    <article class="news-card news-green" tabindex="0" aria-label="Shiny Wo-Chien appears in Pokémon Scarlet and Pokémon Violet Tera Raids">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a76db46e-c5ce-4e95-8202-3d864d984bb9.png" alt="Shiny Wo-Chien Pokémon in a battle scene from Pokémon Scarlet and Pokémon Violet Tera Raids" onerror="this.onerror=null;this.src='https://placehold.co/400x120?text=Image+not+available';" />
+      <h3>Shiny Wo-Chien Appears in <em>Pokémon Scarlet</em> and <em>Pokémon Violet</em> Tera Raids</h3>
+      <p>Challenge the first of four 5-star Tera Raid Battle events featuring Shiny Ruinous Pokémon.</p>
+    </article>
+    <article class="news-card news-purple" tabindex="0" aria-label="Primarina ex and Sylveon ex take the stage in a fast-paced deck strategy">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b0db6177-810f-48b5-9480-a68db8ed8e9e.png" alt="Pokémon TCG cards featuring Primarina ex and Sylveon ex in action-ready illustrations" onerror="this.onerror=null;this.src='https://placehold.co/400x120?text=Image+not+available';" />
+      <h3>Primarina ex and Sylveon ex Take the Stage in a Fast-Paced Deck Strategy</h3>
+      <p>Toughness and speed costar to counter some of the strongest decks in Pokémon TCG Pocket.</p>
+    </article>
+    <article class="news-card news-yellow" tabindex="0" aria-label="An unforgettable adventure at PokéPark KANTO">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0ee6ab6f-2a42-4cd9-928d-7d96c50e0a18.png" alt="Animated scene of PokePark KANTO with many Pokémon roaming in a bright forest setting" onerror="this.onerror=null;this.src='https://placehold.co/400x120?text=Image+not+available';" />
+      <h3>An Unforgettable Adventure at PokéPark KANTO</h3>
+      <p>Opening in early 2026, this permanent outdoor Pokémon attraction features more than 600 Pokémon.</p>
+    </article>
+    <article class="news-card news-blue" tabindex="0" aria-label="Party at Your Play! Pokémon League with 2025 Worlds Celebration Tournaments">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f798db5f-419a-41fc-af1e-fb8fcffcbf18.png" alt="Pokémon 2025 Worlds Celebration tournament promo card with Pikachu and tournament info" onerror="this.onerror=null;this.src='https://placehold.co/400x120?text=Image+not+available';" />
+      <h3>Party at Your Play! Pokémon League with 2025 Worlds Celebration Tournaments</h3>
+      <p>From August 11–17, 2025, you can earn a Pikachu promo card (or participating in a 2025 Worlds Celebration tournament at your local Play! Pokémon League).</p>
+    </article>
+    <article class="news-card orange-btn" tabindex="0" aria-label="View All News button">View All News<br /><small>Keep up with all the latest developments!</small></article>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer aria-label="Site footer with subscription form and company links">
+  <div class="footer-container">
+
+    <!-- Sign up form -->
+    <section class="email-signup" aria-labelledby="signup-label">
+      <h3 id="signup-label">Sign up for Pokémon emails!</h3>
+      <form action="#" method="POST" id="signupForm" novalidate>
+        <div class="email-inputs">
+          <input type="email" name="email" id="email" placeholder="Email" required aria-required="true" aria-describedby="emailHelp" />
+          <select name="country" id="country" aria-label="Select your country" required>
+            <option value="" disabled selected>United States</option>
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <!-- More countries can be added here -->
+          </select>
+          <input type="date" name="birthday" id="birthday" placeholder="Birthday" aria-label="Enter your birthday" max="2024-12-31" />
+        </div>
+        <div class="checkboxes">
+          <label><input type="checkbox" name="emails" value="games" checked /> Pokémon video games, apps, and more</label>
+          <label><input type="checkbox" name="emails" value="shop" checked /> Pokémon Center (our official online shop)</label>
+          <label><input type="checkbox" name="terms" value="accept" required /> I accept the Pokémon.com <a href="#" target="_blank" rel="noopener">Terms of Use</a> and <a href="#" target="_blank" rel="noopener">Privacy Notice</a></label>
+        </div>
+        <button type="submit" class="signup-btn" aria-label="Sign up for Pokémon emails">SIGN UP</button>
+      </form>
+    </section>
+
+    <!-- Company links and social media -->
+    <section class="footer-links" aria-label="Footer company info and navigation links">
+      <div class="footer-col" aria-labelledby="company-label">
+        <h4 id="company-label">The Pokémon Company</h4>
+        <ul>
+          <li tabindex="0">News</li>
+          <li tabindex="0">Parents Guide</li>
+          <li tabindex="0">Customer Service</li>
+          <li tabindex="0">About Our Company</li>
+          <li tabindex="0">Careers</li>
+          <li tabindex="0">Select a Country/Region</li>
+          <li tabindex="0">Press Site</li>
+        </ul>
+      </div>
+      <div class="footer-socials" aria-label="Social media links">
+        <a href="#" aria-label="Facebook" tabindex="0" role="link" target="_blank" rel="noopener">F</a>
+        <a href="#" aria-label="YouTube" tabindex="0" role="link" target="_blank" rel="noopener">YT</a>
+        <a href="#" aria-label="Twitter" tabindex="0" role="link" target="_blank" rel="noopener">T</a>
+        <a href="#" aria-label="Discord" tabindex="0" role="link" target="_blank" rel="noopener">Dc</a>
+        <a href="#" aria-label="Pinterest" tabindex="0" role="link" target="_blank" rel="noopener">P</a>
+      </div>
+      <div class="footer-col footer-legal" aria-label="Legal information">
+        <p>Terms of Use<br />Privacy Notice<br />Cookie Page<br />Legal Info<br />Security</p>
+        <p>©2025 Pokémon, ©1995–2025 Nintendo/Creatures Inc./GAME FREAK inc.<br />TM, ® Nintendo.</p>
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d0a31c1c-e9a2-45e3-9604-9443b63399d5.png" alt="Certification logos including CARU Safe Harbor" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0b7d53a5-68e3-4c76-a700-7590015f02db.png';" />
+      </div>
+    </section>
+  </div>
+</footer>
+
+<!-- Recaptcha and scripts can be added below -->
+
+</body>
+</html>
+
